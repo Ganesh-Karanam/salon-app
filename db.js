@@ -4,7 +4,7 @@ require('dotenv').config(); // Load environment variables
 
 const connectDB = async () => {
   try {
-    const uri = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_CLUSTER}/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
+    const uri = `${process.env.MONGO_URI}`;
 
     await mongoose.connect(uri, {
       useNewUrlParser: true,
